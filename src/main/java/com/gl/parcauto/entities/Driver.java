@@ -25,6 +25,6 @@ public class Driver extends BaseEntity{
     @Column(name = "date_of_birth")
     private LocalDateTime dateOfBirth;
 
-    @OneToMany(mappedBy = "driver")
+    @OneToMany(mappedBy = "driver", fetch = FetchType.LAZY)
     private Set<Assigned> assignedSet = new HashSet<>();
 }

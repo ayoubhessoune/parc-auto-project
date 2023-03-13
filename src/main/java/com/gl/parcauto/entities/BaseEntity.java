@@ -22,6 +22,7 @@ public class BaseEntity {
     @Column(name = "id", columnDefinition = "varchar(36)", nullable = false, updatable = false)
     private UUID uuid;
     @CreationTimestamp
+    @Column(updatable = false)
     private Timestamp createdAt;
     @UpdateTimestamp
     private Timestamp updatedAt;

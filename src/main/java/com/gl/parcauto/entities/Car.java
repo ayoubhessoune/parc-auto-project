@@ -1,9 +1,6 @@
 package com.gl.parcauto.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,6 +18,6 @@ import java.util.Set;
 public class Car extends BaseEntity{
     @Column(name = "license_plate")
     private String licensePlate;
-    @OneToMany(mappedBy = "car")
+    @OneToMany(mappedBy = "car", fetch = FetchType.LAZY)
     private Set<Assigned> assignedSet = new HashSet<>();
 }
